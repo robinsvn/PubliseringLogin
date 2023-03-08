@@ -1,32 +1,43 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Web.Security;//for formsauth
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Web.Security;
 
-namespace LoginSample
+namespace PubliseringLogin
 {
     public partial class Login : System.Web.UI.Page
     {
+        static string connectionString = ConfigurationManager.ConnectionStrings["connstr"].ConnectionString;
+        SqlConnection conn = new SqlConnection(connectionString);
+        DBLayer dbl = new DBLayer();
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
-        
-
-        protected void ButtonLogin_Click(object sender, EventArgs e)
+        protected void LoginButton_Click(object sender, EventArgs e)
         {
-            if (txtUserPass.Value == "123")//use a database method here.
+            var GetAllFromLogin = dbl.GetAllFromLogin();
+            var password = "";
+            foreach (DataRow row in GetAllFromLogin.AsEnumerable())
             {
-                
-                FormsAuthentication.RedirectFromLoginPage(txtUserName.Value, chkPersistCookie.Checked);
-                
+                password = row["pw"].ToString();
+            }
+            if (PasswordCheck.Text == password)
+            {
+                FormsAuthentication.RedirectFromLoginPage(password, false);
+                WrongPassword.Visible = false;
             }
             else
-                Response.Redirect("login.aspx", true);//todo add errormessage to user if wrong
+            {
+                WrongPassword.Visible = true;
+            }
+        }
+
+        protected void DefaultRedirect_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx");
         }
     }
 }

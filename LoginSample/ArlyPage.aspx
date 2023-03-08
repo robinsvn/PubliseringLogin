@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="PubliseringLogin.Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ArlyPage.aspx.cs" Inherits="PubliseringLogin.ArlyPage" %>
 
 <!DOCTYPE html>
 
@@ -7,7 +7,6 @@
     <title>PubliseringLogin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="Styles.css" rel="stylesheet" />
 
     <script>
@@ -25,20 +24,20 @@
     <form id="form1" runat="server">
         <div>
             <div class="topnav" id="myTopnav">
-                <a href="Default.aspx" class="active">Home</a>
-                <a href="ArlyPage.aspx">Arly</a>
+                <a href="Default.aspx">Home</a>
+                <a href="ArlyPage.aspx" class="active">Arly</a>
                 <a href="Restricted.aspx">Restricted</a>
                 <asp:LoginStatus ID="LoginStatus1" runat="server" />
                 
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                 <i class="fa fa-bars"></i>
                 </a>
-            </div><br />
+            </div>
             <center>
-                <div class="MID">
-                    <asp:Label ID="Kolonne1" runat="server" Text="Label"></asp:Label>   
-                </div>
-            </center>
+            <div class="MID">
+                <p class="label"><asp:Label ID="ArlyText" runat="server" Text="Label"></asp:Label>   </p> 
+             </div>
+                </center>
         </div>
     </form>
 </body>

@@ -1,12 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Reflection.Emit;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace PubliseringLogin
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class ArlyPage : System.Web.UI.Page
     {
         static string connectionString = ConfigurationManager.ConnectionStrings["connstr"].ConnectionString;
         SqlConnection conn = new SqlConnection(connectionString);
@@ -18,12 +22,12 @@ namespace PubliseringLogin
         protected void TekstHent()
         {
             var GetAllFromLogin = dbl.GetAllFromLogin();
-            var Kol1 = "";
+            var Text = "";
             foreach (DataRow row in GetAllFromLogin.AsEnumerable())
             {
-                Kol1 = row["kol1"].ToString();
+                Text = row["ArlyText"].ToString();
             }
-            Kolonne1.Text = Kol1;
+            ArlyText.Text = Text;
         }
     }
 }

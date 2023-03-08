@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LoginSample
+namespace PubliseringLogin
 {
 
 
@@ -24,66 +24,48 @@ namespace LoginSample
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// txtUserName control.
+        /// DefaultRedirect control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtUserName;
+        protected global::System.Web.UI.WebControls.Button DefaultRedirect;
 
         /// <summary>
-        /// vUserName control.
+        /// LoginPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator vUserName;
+        protected global::System.Web.UI.WebControls.Panel LoginPanel;
 
         /// <summary>
-        /// txtUserPass control.
+        /// PasswordCheck control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword txtUserPass;
+        protected global::System.Web.UI.WebControls.TextBox PasswordCheck;
 
         /// <summary>
-        /// vUserPass control.
+        /// LoginButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator vUserPass;
+        protected global::System.Web.UI.WebControls.Button LoginButton;
 
         /// <summary>
-        /// chkPersistCookie control.
+        /// WrongPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkPersistCookie;
-
-        /// <summary>
-        /// ButtonLogin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonLogin;
-
-        /// <summary>
-        /// lblMsg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMsg;
+        protected global::System.Web.UI.WebControls.Label WrongPassword;
     }
 }

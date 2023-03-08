@@ -1,42 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
+﻿using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 
-namespace LoginSample
+namespace PubliseringLogin
 {
     public class DBLayer
     {
-        public int GetUserCountByUserNameAndPassWord(string userName, string passWord)
+        static string connectionString = ConfigurationManager.ConnectionStrings["connstr"].ConnectionString;
+        SqlConnection conn = new SqlConnection(connectionString);
+        public DataTable GetAllFromLogin()
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["xxxx"].ConnectionString;
-            SqlParameter param;
-            int count = 0;//either 0 or 1. 1 if user exists
-            string sqlCmd = "";
-            
-            sqlCmd = "select count(id)as num from table where username=@un and password=@pw";
-            
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(sqlCmd, conn);
-                cmd.CommandType = CommandType.Text;
+            DataTable Login = new DataTable();
 
-                param = new SqlParameter("@un", SqlDbType.NVarChar);
-                param.Value = userName;
-                cmd.Parameters.Add(param);
+            conn.Open();
+            SqlCommand cmd = new SqlCommand($"SELECT * FROM Login", conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            Login.Load(reader);
+            conn.Close();
 
-                param = new SqlParameter("@pw", SqlDbType.NVarChar);
-                param.Value = passWord;
-                cmd.Parameters.Add(param);
-
-                count = (int)cmd.ExecuteScalar();
-                conn.Close();
-                return count;
-            }
+            return Login;
+        }
+        public void UpdateArlyText(string ArlyText)
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("UPDATE Login SET ArlyText = @ArlyText WHERE id = 1", conn);
+            cmd.Parameters.AddWithValue("ArlyText", ArlyText);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+        public void UpdateKolonneText(string KolonneText)
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("UPDATE Login SET kol1 = @kol1 WHERE id = 1", conn);
+            cmd.Parameters.AddWithValue("kol1", KolonneText);
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
     }
 }
