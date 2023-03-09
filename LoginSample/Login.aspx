@@ -17,7 +17,7 @@
     <asp:TextBox ID="PasswordCheck" runat="server" TextMode="Password" ></asp:TextBox>
     <asp:Button ID="LoginButton" runat="server" Text="Logg inn" OnClick="LoginButton_Click" /><br />
     <asp:Label ID="WrongPassword" runat="server" Text="WrongPassword" Visible="false"></asp:Label>
-  </asp:Panel>
+  </asp:Panel><br />
     <a href="ChangePassword.aspx">Change password</a>
 </form>
 </body>

@@ -23,6 +23,7 @@
 
     <form id="form1" runat="server">
         <div>
+            <%-- Default navbaren som er på alle sider. Active classfor å gi en grønn farge for å vise hvilken side du er på. Blir til hamburger meny om nettsiden er under 600px vidde.--%>
             <div class="topnav"id="myTopnav">
                 <a href="Default.aspx">Home</a>
                 <a href="ArlyPage.aspx">Arly</a>
@@ -33,6 +34,7 @@
                 <i class="fa fa-bars"></i>
                 </a>
             </div><br />
+           <%-- Her redigerer du tekst som er i databasen. "ArlyTextbox" redigerer "ArlyText i databasen og på "Arly" siden, og "KolonneText" for "kol1" i databasen som vises på hjemmesiden.--%>
         <asp:TextBox ID="ArlyTextbox" runat="server" TextMode="MultiLine"></asp:TextBox><br />
             <asp:Button ID="UpdateDB" runat="server" Text="Update" OnClick="UpdateDB_Click" style="width: 61px"/><br /><br /><br />
         <asp:TextBox ID="KolonneTextbox" runat="server" TextMode="MultiLine"></asp:TextBox><br />

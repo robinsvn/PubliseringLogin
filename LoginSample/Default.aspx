@@ -24,6 +24,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
+              <%-- Default navbaren som er på alle sider. Active classfor å gi en grønn farge for å vise hvilken side du er på. Blir til hamburger meny om nettsiden er under 600px vidde.--%>
             <div class="topnav" id="myTopnav">
                 <a href="Default.aspx" class="active">Home</a>
                 <a href="ArlyPage.aspx">Arly</a>
@@ -35,6 +36,7 @@
                 </a>
             </div><br />
             <center>
+                <%--Label for å vise tekst hentet fra database. Denne henter fra "kol1" i databasen.--%>
                 <div class="MID">
                     <asp:Label ID="Kolonne1" runat="server" Text="Label"></asp:Label>   
                 </div>
