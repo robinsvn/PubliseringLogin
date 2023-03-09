@@ -43,6 +43,10 @@
         display: none;
     }
 
+    .topnav .LoginStatus1 {
+        float: right;
+    }
+
 @media screen and (max-width: 600px) {
     .topnav a:not(:first-child) {
         display: none;
@@ -70,4 +74,9 @@
             display: block;
             text-align: left;
         }
+}
+@media screen and (min-width: 601px) {
+    .topnav #LoginStatus1 {
+        float: right;
+    }
 }

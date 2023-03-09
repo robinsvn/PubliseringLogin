@@ -36,5 +36,13 @@ namespace PubliseringLogin
             cmd.ExecuteNonQuery();
             conn.Close();
         }
+        public void ChangeLoginAdminPasswordOnButton(string PasswordText)
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("UPDATE Login SET pw = @pw WHERE id = 1", conn);
+            cmd.Parameters.AddWithValue("pw", PasswordText);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
     }
 }

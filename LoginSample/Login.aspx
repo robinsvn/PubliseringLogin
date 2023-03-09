@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Login</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
 <form id="form1" runat="server">
@@ -18,6 +18,7 @@
     <asp:Button ID="LoginButton" runat="server" Text="Logg inn" OnClick="LoginButton_Click" /><br />
     <asp:Label ID="WrongPassword" runat="server" Text="WrongPassword" Visible="false"></asp:Label>
   </asp:Panel>
+    <a href="ChangePassword.aspx">Change password</a>
 </form>
 </body>
 </html>
